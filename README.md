@@ -2,6 +2,19 @@
 
 O objetivo deste repositório é orientar desenvolvedores na instalação e configuração do WSL2 no Windows, permitindo que o Docker seja executado de forma nativa. Ao seguir este guia, você será capaz de criar um ambiente de desenvolvimento integrado e otimizado, utilizando o poder do Docker sem a complexidade de máquinas virtuais tradicionais. Além disso, o repositório inclui instruções para rodar um contêiner com SQL Server no Docker, possibilitando um setup completo para desenvolvimento de aplicações que utilizam bancos de dados. Este passo a passo busca simplificar todo o processo, tornando-o acessível para desenvolvedores de todos os níveis.
 
+## O que e o WSL2 ?
+
+O **WSL2** (Windows Subsystem for Linux 2) é a segunda versão do subsistema da Microsoft que permite rodar um kernel Linux completo diretamente no Windows. Ele foi criado para melhorar a integração entre o Windows e Linux, permitindo que desenvolvedores usem ferramentas e utilitários nativos do Linux sem a necessidade de rodar uma máquina virtual completa.
+
+### Características do WSL2:
+
+- **Kernel Linux Real**: Diferente da primeira versão (WSL1), que traduzia chamadas do sistema Linux para o Windows, o WSL2 roda um kernel Linux completo em uma máquina leve.
+- **Desempenho**: O WSL2 oferece melhor performance, especialmente em operações de I/O, como leitura e escrita de arquivos.
+- **Suporte a Docker**: Ele permite a execução do Docker nativamente no Windows, eliminando a necessidade de uma máquina virtual dedicada para rodar contêineres.
+- **Integração com Windows**: Permite que você acesse o sistema de arquivos do Windows a partir do Linux e vice-versa, facilitando o fluxo de trabalho entre os dois sistemas.
+- **Ideal para desenvolvedores**: Que precisam de um ambiente Linux sem sair do Windows.
+
+
 
 ## ✅ Benefícios de Usar WSL2 com Docker Nativo
 
