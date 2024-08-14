@@ -3,7 +3,7 @@
 O objetivo deste repositório é orientar desenvolvedores na instalação e configuração do WSL2 no Windows, permitindo que o Docker seja executado de forma nativa. Ao seguir este guia, você será capaz de criar um ambiente de desenvolvimento integrado e otimizado, utilizando o poder do Docker sem a complexidade de máquinas virtuais tradicionais. Além disso, o repositório inclui instruções para rodar um contêiner com SQL Server no Docker, possibilitando um setup completo para desenvolvimento de aplicações que utilizam bancos de dados. Este passo a passo busca simplificar todo o processo, tornando-o acessível para desenvolvedores de todos os níveis.
 
 
-## Benefícios de Usar WSL2 com Docker Nativo
+## ✅ Benefícios de Usar WSL2 com Docker Nativo
 
 ### 1. Desempenho Melhorado
 O WSL2 permite que o Docker rode diretamente no Windows, utilizando o kernel do Linux. Isso resulta em um desempenho significativamente melhorado em comparação com a execução em máquinas virtuais tradicionais.
@@ -38,6 +38,36 @@ Manter o WSL2 e o Docker atualizados é simples, com suporte contínuo da Micros
 
 Provavelmente seu Windows já está na versão suportada, mas verifique isto acessando `Todas as Configurações > Sistema > Sobre`. Caso não esteja, use o Assistente do Windows Update para atualizar a sua versão do Windows.
 
-> **É essencial manter o Windows atualizado, pois o WSL 2 depende de uma versão atualizada do Hyper-V. Verifique o Windows Update.**
->
-> 
+## 1️⃣ 1° Passo para Instalação do WSL 2
+
+Todas as instruções abaixo são para o Windows 10/11.
+
+### Windows Update
+
+Verifique se seu Windows está atualizado, pois o WSL 2 depende de uma versão atualizada do Hyper-V. Verifique o Windows Update.
+
+### Atualizar o WSL
+
+Com a versão 2004 do Windows 10 ou Windows 11, o WSL já estará presente em sua máquina, execute o comando para pegar a versão mais recente do WSL:
+
+``` bash
+wsl --update
+```
+
+### 2️⃣ 2° Passo: Atribuir a versão default do WSL para a versão 2
+
+A versão 2 normalmente é a default, mas a versão 1 do WSL pode estar como default, execute o comando abaixo para definir como default a versão 2:
+
+``` bash
+wsl --set-default-version 2
+```
+
+### Instale o Ubuntu
+
+Execute o comando:
+
+```bash
+wsl --install
+```
+
+Este comando irá instalar o `Ubuntu` como o Linux padrão. 
