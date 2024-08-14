@@ -1,6 +1,7 @@
-## Objetivo Desse Repositorio:
+## Objetivo Desse Repositório:
 
-O objetivo deste repositório é orientar desenvolvedores na instalação e configuração do WSL2 no Windows, permitindo que o Docker seja executado de forma nativa. Ao seguir este guia, você será capaz de criar um ambiente de desenvolvimento integrado, utilizando o poder do Docker sem a complexidade de máquinas virtuais tradicionais. Este passo a passo busca simplificar o processo, tornando-o acessível para todos os níveis de experiência.
+O objetivo deste repositório é orientar desenvolvedores na instalação e configuração do WSL2 no Windows, permitindo que o Docker seja executado de forma nativa. Ao seguir este guia, você será capaz de criar um ambiente de desenvolvimento integrado e otimizado, utilizando o poder do Docker sem a complexidade de máquinas virtuais tradicionais. Além disso, o repositório inclui instruções para rodar um contêiner com SQL Server no Docker, possibilitando um setup completo para desenvolvimento de aplicações que utilizam bancos de dados. Este passo a passo busca simplificar todo o processo, tornando-o acessível para desenvolvedores de todos os níveis.
+
 
 ## Benefícios de Usar WSL2 com Docker Nativo
 
@@ -21,3 +22,22 @@ Com o Docker rodando nativamente no WSL2, você tem acesso direto às ferramenta
 
 ### 6. Atualizações e Manutenção Facéis
 Manter o WSL2 e o Docker atualizados é simples, com suporte contínuo da Microsoft e da comunidade Docker, garantindo que você tenha acesso às últimas funcionalidades e correções de segurança.
+
+## Requisitos mínimos
+
+* **Windows 10 Home ou Professional**
+  - Versão 2004 ou superior (Build 19041 ou superior).
+  - Versões mais antigas requerem a instalação manual do WSL 2. Ver tutorial [https://learn.microsoft.com/en-us/windows/wsl/install-manual](https://learn.microsoft.com/en-us/windows/wsl/install-manual).
+
+* **Windows 11 Home ou Professional**
+  - Versão 22000 ou superior (qualquer Windows 11).
+
+* Uma máquina compatível com virtualização (verifique a disponibilidade de acordo com a marca do seu processador. Se sua máquina for mais antiga pode ser necessária habilita-la na BIOS).
+
+* Pelo menos 4GB de memória RAM (Recomendado 8GB).
+
+Provavelmente seu Windows já está na versão suportada, mas verifique isto acessando `Todas as Configurações > Sistema > Sobre`. Caso não esteja, use o Assistente do Windows Update para atualizar a sua versão do Windows.
+
+> **É essencial manter o Windows atualizado, pois o WSL 2 depende de uma versão atualizada do Hyper-V. Verifique o Windows Update.**
+>
+> 
