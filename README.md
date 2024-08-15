@@ -84,3 +84,13 @@ wsl --install
 ```
 
 Este comando irá instalar o `Ubuntu` como o Linux padrão. 
+
+Se você quiser instalar uma versão diferente do Ubuntu, execute o comando `wsl -l -o`. Será listado todas as versões de Linux disponíveis. Instale a versão escolhida com o comando `wsl --install -d nome-da-distribuicao`.
+
+Sugiro o Ubuntu (sem versão) por ser uma distribuição popular e que já vem com várias ferramentas úteis para desenvolvimento instaladas por padrão.
+
+Após o término do comando, você deverá criar um **nome de usuário** que poderá ser o mesmo da sua máquina (crie um nome de usuário sem espaço e caracteres especiais) e uma **senha** (defina uma senha forte). **Guarde Esta senha**, Ela será usada para instalar pacotes e realizar operações de superusuário.
+
+Para abrir uma nova janela do Ubuntu, basta digitar `Ubuntu` no menu iniciar e clicar no ícone do Ubuntu.	
+
+Recomendo o uso do [Windows Terminal](https://docs.microsoft.com/pt-br/windows/terminal/get-started) como terminal padrão para desenvolvimento no Windows. Ele agregará o shell do Ubuntu, assim como o PowerShell e o CMD em uma única janela, além de permitir personalização de cores e temas.
