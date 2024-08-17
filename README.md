@@ -75,7 +75,7 @@ A versão 2 normalmente é a default, mas a versão 1 do WSL pode estar como def
 wsl --set-default-version 2
 ```
 
-### Instale o Ubuntu
+### 3️⃣ 3° Passo: Instale o Ubuntu
 
 Execute o comando:
 
@@ -107,7 +107,7 @@ Recomendo o uso do [Windows Terminal](https://docs.microsoft.com/pt-br/windows/t
  
 ---
 
-### Integre o Wsl2 com VSCode.
+## ⚙️ Integre o Wsl2 com VSCode.
 
 O Visual Studio Code tem uma extensão chamada **Remote - WSL** que permite acessar o WSL 2 diretamente do VSCode. Com esta extensão, você pode editar seus arquivos diretamente no WSL 2, rodar comandos, instalar extensões e muito mais.
 
@@ -127,7 +127,7 @@ Isto irá conectar o VSCode ao WSL 2 e então poderá abrir o projeto que está 
 
 ---
 
-### Beneficios da integração Wsl2 com Vscode.
+## ✅ Beneficios da integração Wsl2 com Vscode.
  - **Desempenho Nativo do Linux:** Mesmo que você esteja usando o VS Code no Windows, você tem o desempenho nativo do Linux para compilar, executar e debugar.
  - **Ambiente de Desenvolvimento Completo:** Ferramentas e extensões que exigem um ambiente Linux funcionam sem a necessidade de uma máquina virtual separada.
  - **Integração Perfeita:** O VS Code permite que você edite e debuge como se estivesse no Linux, mas sem sair da interface familiar do Windows.
