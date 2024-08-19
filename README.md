@@ -2,7 +2,7 @@
 
 O objetivo deste repositório é orientar desenvolvedores na instalação e configuração do WSL2 no Windows, permitindo que o Docker seja executado de forma nativa. Ao seguir este guia, você será capaz de criar um ambiente de desenvolvimento integrado e otimizado, utilizando o poder do Docker sem a complexidade de máquinas virtuais tradicionais. Além disso, o repositório inclui instruções para rodar um contêiner com SQL Server no Docker, possibilitando um setup completo para desenvolvimento de aplicações que utilizam bancos de dados. Este passo a passo busca simplificar todo o processo, tornando-o acessível para desenvolvedores de todos os níveis.
 
-## O que e o WSL2 ?
+## ❓ O que e o WSL2 ?
 
 O **WSL2** (Windows Subsystem for Linux 2) é a segunda versão do subsistema da Microsoft que permite rodar um kernel Linux completo diretamente no Windows. Ele foi criado para melhorar a integração entre o Windows e Linux, permitindo que desenvolvedores usem ferramentas e utilitários nativos do Linux sem a necessidade de rodar uma máquina virtual completa.
 
@@ -133,3 +133,42 @@ Isto irá conectar o VSCode ao WSL 2 e então poderá abrir o projeto que está 
  - **Integração Perfeita:** O VS Code permite que você edite e debuge como se estivesse no Linux, mas sem sair da interface familiar do Windows.
    
 Em resumo, ao usar o VS Code com WSL2, você pode aproveitar tanto as ferramentas nativas do Linux quanto a interface gráfica e as funcionalidades poderosas do VS Code, tornando o processo de desenvolvimento mais fluido e eficiente.   
+
+## ❓ O que e o Docker ?
+
+O Docker é uma plataforma de código aberto que permite a criação, o gerenciamento e a execução de contêineres de software. Contêineres são pacotes que contêm uma aplicação e todas as suas dependências (bibliotecas, ferramentas de sistema, etc.), garantindo que a aplicação possa ser executada de forma consistente em diferentes ambientes, como desenvolvimento, teste e produção.
+
+## Componentes Principais do Docker:
+**Contêineres:**
+ - Um contêiner é uma instância isolada de um aplicativo que contém tudo o que ele precisa para funcionar, como código, bibliotecas e variáveis de ambiente.
+Ao contrário das máquinas virtuais, os contêineres compartilham o kernel do sistema operacional e são mais leves, rápidos de iniciar e eficientes em termos de recursos.
+
+**Imagens Docker:**
+ - Uma imagem Docker é um "modelo" ou blueprint para criar contêineres. Ela contém o código da aplicação e tudo que ela precisa para rodar, como dependências, sistema de arquivos e configurações.
+Imagens são imutáveis, ou seja, uma vez criadas, não podem ser alteradas. Isso garante consistência na execução de contêineres.
+
+**Docker Engine:**
+ - O Docker Engine é o mecanismo que gerencia a execução dos contêineres. Ele permite que você crie, execute e gerencie contêineres em seu sistema.
+   
+**Docker Hub:**
+ - O Docker Hub é um repositório público (ou privado) onde você pode encontrar e compartilhar imagens Docker. Ele facilita o download e a distribuição de contêineres.
+   
+**Docker Compose:**
+ - O Docker Compose é uma ferramenta usada para definir e executar múltiplos contêineres Docker. Ele permite que você configure ambientes de contêineres complexos com apenas um arquivo YAML.
+
+## Como o Docker Funciona:
+O Docker utiliza uma tecnologia de contêinerização que envolve:
+
+- Isolamento de Processos: Cada contêiner roda em um processo separado e não interfere nos outros contêineres ou no sistema principal.
+- Portabilidade: Como tudo que a aplicação precisa está dentro do contêiner, você pode rodá-la em qualquer ambiente que suporte Docker, como no seu computador, no servidor de produção ou na nuvem.
+- Eficiência: Como os contêineres compartilham o kernel do sistema operacional, eles são mais leves e rápidos em comparação com máquinas virtuais, que têm um sistema operacional completo dentro delas.
+- Reprodutibilidade: Usando imagens imutáveis, você garante que o ambiente de desenvolvimento, teste e produção seja exatamente o mesmo.
+- Escalabilidade: Docker facilita o uso de várias instâncias de contêineres, permitindo a escalabilidade de aplicações.
+
+Casos de Uso:
+
+- Desenvolvimento de Software: Desenvolvedores usam Docker para criar ambientes de desenvolvimento consistentes e rápidos.
+- Deploy de Aplicações: Equipes de operações usam Docker para fazer deploy de aplicações em contêineres, garantindo que funcionem da mesma maneira em diferentes servidores.
+- Microservices: Docker é amplamente usado para criar arquiteturas de microserviços, onde diferentes partes de uma aplicação são separadas em contêineres individuais.
+
+Por exemplo, se você desenvolver uma aplicação em Node.js com várias dependências, você pode "empacotá-la" em um contêiner Docker. O contêiner garantirá que, em qualquer lugar onde você rodar a aplicação (em outro computador ou servidor), ela funcionará exatamente da mesma maneira. Em resumo, o Docker é uma ferramenta poderosa que facilita o desenvolvimento, distribuição e execução de aplicativos em ambientes isolados e portáteis, otimizando o uso de recursos e garantindo consistência entre diferentes ambientes de execução.
