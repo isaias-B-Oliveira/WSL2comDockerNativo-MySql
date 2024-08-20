@@ -172,3 +172,48 @@ Casos de Uso:
 - Microservices: Docker é amplamente usado para criar arquiteturas de microserviços, onde diferentes partes de uma aplicação são separadas em contêineres individuais.
 
 Por exemplo, se você desenvolver uma aplicação em Node.js com várias dependências, você pode "empacotá-la" em um contêiner Docker. O contêiner garantirá que, em qualquer lugar onde você rodar a aplicação (em outro computador ou servidor), ela funcionará exatamente da mesma maneira. Em resumo, o Docker é uma ferramenta poderosa que facilita o desenvolvimento, distribuição e execução de aplicativos em ambientes isolados e portáteis, otimizando o uso de recursos e garantindo consistência entre diferentes ambientes de execução.
+
+## ⚙️ Agora vamos Instalar o Docker com Docker Engine (Docker Nativo).
+
+A instalação do Docker no WSL 2 é idêntica a instalação do Docker em sua própria distribuição Linux, portanto se você tem o Ubuntu é igual ao Ubuntu, se é Fedora é igual ao Fedora. A documentação de instalação do Docker no Linux por distribuição está [aqui](https://docs.docker.com/engine/install/), mas vamos ver como instalar no Ubuntu.
+
+
+> ⚠️ **Quem está migrando de Docker Desktop para Docker Engine, temos duas opções**
+> 1. Desinstalar o Docker Desktop.
+> 2. Desativar o Docker Desktop Service nos serviços do Windows. Esta opção permite que você utilize o Docker Desktop, se necessário, para a maioria dos usuários a desinstalação do Docker Desktop é a mais recomendada.
+>Se você escolheu a 2º opção, precisará excluir o arquivo ~/.docker/config.json e realizar a autenticação com Docker novamente através do comando "docker login"
+>
+> ⚠️ **Se necessitar integrar o Docker com outras IDEs que não sejam o VSCode**
+>
+> 
+> É necessário habilitar a conexão ao servidor do Docker via TCP. Vamos aos passos:
+> 1. Crie o arquivo /etc/docker/daemon.json: `sudo echo '{"hosts": ["tcp://0.0.0.0:2375", "unix:///var/run/docker.sock"]}' > /etc/docker/daemon.json`
+> 2. Reinicie o Docker: `sudo service docker restart`
+> 
+> Após este procedimento, vá na sua IDE e para conectar ao Docker escolha a opção TCP Socket e coloque a URL `http://IP-DO-WSL:2375`. Seu IP do WSL pode ser encontrado com o comando `cat /etc/resolv.conf`.
+> 
+> Se caso não funcionar, reinicie o WSL com o comando `wsl --shutdown` e inicie o serviço do Docker novamente.
+>
+> 
+> ⚠️ O VSCode já se integra com o Docker no WSL desta forma através da extensão Remote WSL ou Remote Container. entao não e nessesrio realisar as configuraçõens acima.
+>
+
+1️⃣ Execute os comandos no terminal do Ubunto:
+
+```
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+**Entendendo esses Comandos:**
+- Esses comandos configuram o sistema para instalar o Docker diretamente do repositório oficial do Docker, garantem a autenticidade dos pacotes usando chaves GPG e instalam o Docker Engine junto com suas ferramentas associadas. Após a execução desses comandos, o Docker estará pronto para uso no seu sistema Ubuntu rodando no WSL2 ou em uma instalação nativa do Ubuntu.
