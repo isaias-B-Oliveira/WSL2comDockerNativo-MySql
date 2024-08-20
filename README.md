@@ -198,7 +198,7 @@ A instalação do Docker no WSL 2 é idêntica a instalação do Docker em sua p
 > ⚠️ O VSCode já se integra com o Docker no WSL desta forma através da extensão Remote WSL ou Remote Container. entao não e nessesrio realisar as configuraçõens acima.
 >
 
-1️⃣ Execute os comandos no terminal do Ubunto:
+## 1️⃣ Execute os comandos no terminal do Ubunto:
 
 ```
 sudo apt-get update
@@ -217,3 +217,21 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```
 **Entendendo esses Comandos:**
 - Esses comandos configuram o sistema para instalar o Docker diretamente do repositório oficial do Docker, garantem a autenticidade dos pacotes usando chaves GPG e instalam o Docker Engine junto com suas ferramentas associadas. Após a execução desses comandos, o Docker estará pronto para uso no seu sistema Ubuntu rodando no WSL2 ou em uma instalação nativa do Ubuntu.
+
+## 2️⃣ Adicione o repositório do Docker na lista de sources do Ubuntu:
+
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+> OBSERVAÇÃO: Se você estiver usando uma distribuição diferente do Ubuntu, veja os comandos de instalação no documentação do Docker [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
+
+**Entendendo esses Comandos:**
+- Esses comandos configuram o sistema para permitir a instalação do Docker diretamente do repositório oficial do Docker para Ubuntu, garantindo que os pacotes sejam autenticados com segurança usando a chave GPG. Em seguida, você poderá instalar o Docker Engine e suas ferramentas usando os comandos `apt-get` sem precisar adicionar manualmente o repositório ou chave a cada instalação.
+
+<!-- <h1>linha 506</h1> -->
+
+  
