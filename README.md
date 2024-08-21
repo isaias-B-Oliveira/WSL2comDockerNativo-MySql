@@ -232,6 +232,36 @@ echo \
 **Entendendo esses Comandos:**
 - Esses comandos configuram o sistema para permitir a instalação do Docker diretamente do repositório oficial do Docker para Ubuntu, garantindo que os pacotes sejam autenticados com segurança usando a chave GPG. Em seguida, você poderá instalar o Docker Engine e suas ferramentas usando os comandos `apt-get` sem precisar adicionar manualmente o repositório ou chave a cada instalação.
 
-<!-- <h1>linha 506</h1> -->
+## 3️⃣ Dê permissão para rodar o Docker com seu usuário corrente:
 
+```
+sudo usermod -aG docker $USER
+```
+
+## 4️⃣ Reiniciar o WSL via linha de comando do Windows para que não seja necessário autorização root para rodar o comando docker:
+
+```
+wsl --shutdown
+```
+
+
+## 5️⃣ Acessar novamente o Terminal do Ubuntu e iniciar o serviço do Docker:
+Esse e o Comando para iniciar o Docker manualmente:
+Atenção o comando `sudo service docker start` exigirá a senha do usuário que está executando o comando, (Aquela que vc criou quando instalou o Ubunto).
+```
+sudo service docker start
+```
+Este comando acima terá que ser executado toda vez que o Linux for reiniciado. Se caso o serviço do Docker não estiver executando, mostrará esta mensagem de erro ao rodar comando `docker`:
+
+## ⚠️ Erro ao iniciar o Docker no Ubuntu 22.04
+
+> Se mesmo ao iniciar o serviço do Docker acontecer o seguinte erro ou similar retornando essa mensagem:
+> 
+> - `Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?`
+>
+> Rode o comando `sudo update-alternatives --config iptables` e escolha a opção 1 `iptables-legacy`
+>
+> Rode novamente o `sudo service docker start`. Rode algum comando Docker como `docker ps` para verificar se está funcionando corretamente. Se não mostrar o erro acima, está ok.
+
+<!--linha 575-->
   
