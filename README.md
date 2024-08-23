@@ -136,6 +136,74 @@ Isto irá conectar o VSCode ao WSL 2 e então poderá abrir o projeto que está 
    
 Em resumo, ao usar o VS Code com WSL2, você pode aproveitar tanto as ferramentas nativas do Linux quanto a interface gráfica e as funcionalidades poderosas do VS Code, tornando o processo de desenvolvimento mais fluido e eficiente.   
 
+## 💡 Dicas e truques básicos com WSL 2
+### Performance ao usar o WSL 2
+
+A performance do WSL 2 está em se executar tudo dentro do Linux, por isso evite executar seus projetos com ou sem Docker do Windows, pois você perderá performance. O ideal é executar tudo dentro do Linux, no caminho `/home/seu_usuario`. (No meu caso criei uma pasta chamada `projects`) Assin posso desenvolver todos projetos no Linux.
+
+<img src="/img/projects.png">
+
+⚠️ Atenção: O ideal e que vc saiba pelo menos os comandos basicos do linux assin facilitara a criação, manipulação, remoção, e movimentação de diretorio.
+
+A ideia é você pegar todos os seus projetos que estão no C: e copia-los para o Linux, no `/home/seu_usuario`. Assim, tudo estará dentro do Linux e a performance será melhor.
+
+A princípio a ideia de fazer tudo no Linux pode parecer estranha, mas é a melhor forma de se obter performance com o WSL 2.
+
+### Acessar disco e outros dispositivos do Windows
+Se vc não quiser migrar seus projetos do windows para o linux
+O WSL 2 tem acesso a todo o disco rígido do Windows, basta acessar o caminho `/mnt/c` para acessar o disco C: do Windows. Se você tiver mais discos, eles estarão disponíveis em `/mnt/d`, `/mnt/e`, etc.
+O `/mnt` é um ponto de montagem do Linux, onde ele monta os dispositivos do Windows.
+
+<img src="/img/discoC.png">
+
+Uma vez dentro do diretório `/mnt/`, você pode navegar pelos arquivos do Windows como se estivesse em um sistema de arquivos Linux. Por exemplo:
+
+`cd /mnt/c/Users/SeuUsuario/SuaPasta
+ls`
+Este comando lista todos os arquivos e pastas dentro da pasta "SuaPasta" do seu usuário no Windows.
+
+### Abrir Arquivos Usando Aplicativos do Windows.
+Você pode abrir arquivos do Windows diretamente usando aplicativos do Windows a partir do WSL2. Por exemplo:
+```bash
+explorer.exe .
+```
+Este comando abrirá o Explorador de Arquivos do Windows na pasta atual do WSL2.
+
+### ⚠️ Mais atenção o ideal e vc migra os projetos para o WSL2, (eu tive problemas com conexõens de banco de dados e portas de execução de containes no Docker)
+
+## ❓ Dúvidas.
+
+### Preciso de uma licença PRO do Windows 10/11 para usar o WSL 2?
+
+Não, o WSL 2 é suportado em todas as versões do Windows 10/11, desde que estejam atualizadas.
+
+### Posso continuar desenvolvendo no Windows sem usar o WSL 2?
+
+Sim, você pode continuar desenvolvendo no Windows sem usar o WSL 2, mas o WSL 2 traz uma experiência de desenvolvimento mais próxima do Linux, com melhor desempenho e mais recursos.
+
+A não ser que você tenha uma necessidade específica de desenvolver no Windows, como desenvolver aplicações usando .Net, por exemplo, provavelmente sua aplicação rodará no Linux, então, o WSL 2 é a melhor opção quando se quer continuar a usar o Windows, usando Linux, mas sem dual boot ou máquina virtual.
+
+### O WSL 2 funciona junto com outras máquinas virtuais como VirtualBox ou VMWare?
+
+O WSL 2 funciona junto com outras máquinas virtuais como **VirtualBox** ou **VMWare**? Siga a [referência](https://learn.microsoft.com/pt-br/windows/wsl/faq#poderei-executar-o-wsl-2-e-outras-ferramentas-de-virtualiza--o-de-terceiros--como-vmware-ou-virtualbox-)
+
+### É possível acessar aplicações rodando no WSL 2 pelo Windows?
+
+Sim, é possível acessar aplicações rodando no WSL 2 pelo Windows, basta acessar o endereço `localhost` no navegador do Windows. O WSL 2 tem uma interface de rede própria e o Windows consegue acessar aplicações rodando no WSL 2.
+
+### É possível rodar aplicações gráficas no WSL 2?
+
+Sim, este o projeto WSLg (Windows Subsystem for Linux GUI) que permite rodar aplicações gráficas no WSL2. Siga a [referência](https://github.com/microsoft/wslg)
+
+
+### Posso usar o WSL em cenários de produção?
+
+O WSL é uma ferramenta de desenvolvimento e não é recomendado para uso em produção.
+
+### Posso rodar o Docker Engine junto com o Docker Desktop?
+
+Não, só é possível rodar um de cada vez. É até possível ter os dois instalados, mas só um pode ser executado por vez. Aseguir tem um tutorial passo a passo de como instalar o Docker engine nativo no WSL2.
+
 ## ❓ O que e o Docker ?
 
 O Docker é uma plataforma de código aberto que permite a criação, o gerenciamento e a execução de contêineres de software. Contêineres são pacotes que contêm uma aplicação e todas as suas dependências (bibliotecas, ferramentas de sistema, etc.), garantindo que a aplicação possa ser executada de forma consistente em diferentes ambientes, como desenvolvimento, teste e produção.
@@ -265,5 +333,6 @@ Este comando acima terá que ser executado toda vez que o Linux for reiniciado. 
 >
 > Rode novamente o `sudo service docker start`. Rode algum comando Docker como `docker ps` para verificar se está funcionando corretamente. Se não mostrar o erro acima, está ok.
 
-<!--linha 575-->
-  
+
+
+  <!--599-162-->
