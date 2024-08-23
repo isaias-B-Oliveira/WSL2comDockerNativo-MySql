@@ -96,11 +96,13 @@ Após o término do comando, você deverá criar um **nome de usuário** que pod
 <img src="/img/explorado.png">
 
 ---
+
 Para abrir uma nova janela do Ubuntu, basta digitar `Ubuntu` no menu iniciar e clicar no ícone do Ubuntu.
 
 <img src="/img/ubumto.png">
 
 ---
+
 Recomendo o uso do [Windows Terminal](https://docs.microsoft.com/pt-br/windows/terminal/get-started) como terminal padrão para desenvolvimento no Windows. Ele agregará o shell do Ubuntu, assim como o PowerShell e o CMD em uma única janela, além de permitir personalização de cores e temas. Se aparecel esse terminal Parabéns, seu WSL2 já está funcionando!
 
 <img src="/img/WindowsTerminal.png">
