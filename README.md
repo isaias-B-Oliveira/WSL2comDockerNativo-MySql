@@ -398,8 +398,15 @@ docker exec -it meu-mysql mysql -u root -p
 ```
 - `exec -it`exec -it: Inicia uma sessão interativa no contêiner.
 - `mysql -u root -p`: Inicia o cliente MySQL como usuário root. Você precisará digitar a senha que configurou (no exemplo anterior, "minhasenha").
+- Lembrando `sql_serve` foi o nome que dei ao meu container na criação.
 
-- Conectar-se ao MySQL usando uma ferramenta externa:
+<img src="/img/cmdcontainer.png">
+
+- dentro do terminal do container vc pode executar qualquer comando SQL.
+<img src="/img/criadb.png">
+<img src="/img/listardb.png">
+
+### Conectar-se ao MySQL usando uma ferramenta externa:
 Se você deseja conectar-se ao MySQL a partir do seu sistema operacional host ou de outra aplicação, certifique-se de mapear a porta 3306 (a porta padrão do MySQL) do contêiner para o host.
 Agora, você pode usar ferramentas como MySQL Workbench ou mysql no terminal para se conectar ao MySQL no localhost na porta `3306`. essa porta e usada para se conectar com seus projetos ela foi definida no monento de criação do comtainer
 - `3306` (à esquerda): Refere-se à porta do sistema operacional host.
