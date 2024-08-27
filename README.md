@@ -412,3 +412,13 @@ Agora, você pode usar ferramentas como MySQL Workbench ou mysql no terminal par
 - `3306` (à esquerda): Refere-se à porta do sistema operacional host.
 - `3306` (à direita): Refere-se à porta dentro do contêiner.
 Neste caso, a porta 3306 do contêiner (que é a porta padrão do MySQL) está sendo mapeada para a porta 3306 do host. 
+
+### Vou recomendar uma extenção do Vscode, pois a sua instação e conexão com o seu banco de dados e mais facil.
+
+Ela se chama (Mysql Database Cliente).
+
+A extensão MySQL Database Client para VS Code é uma poderosa ferramenta para desenvolvedores que trabalham com bancos de dados MySQL, oferecendo um ambiente integrado para conectar-se a bancos de dados, executar consultas, gerenciar dados e estruturas, e tudo isso dentro do VS Code. Isso aumenta a produtividade, eliminando a necessidade de alternar entre diferentes ferramentas de desenvolvimento e gerenciamento de banco de dados. Essa extenção e completa não so para trabalhar com mysql mais para quase todos os bancos de dados relacionais e nao relacionais, vamos configurala passo a passo.
+
+<img src="/img/dbcliente.png">
+
+
