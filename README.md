@@ -333,6 +333,75 @@ Este comando acima terá que ser executado toda vez que o Linux for reiniciado. 
 >
 > Rode novamente o `sudo service docker start`. Rode algum comando Docker como `docker ps` para verificar se está funcionando corretamente. Se não mostrar o erro acima, está ok.
 
+## ❓ O que e o MySql.
 
+MySQL é um sistema de gerenciamento de banco de dados relacional (RDBMS) que utiliza a linguagem SQL (Structured Query Language) para gerenciar e manipular dados. É um dos bancos de dados mais populares e amplamente usados no mundo, especialmente em aplicações web.
 
-  <!--599-162-->
+### Beneficios de usar o mysql em um container Docker.
+
+Usar o MySQL em um contêiner Docker oferece vários benefícios que podem ser particularmente vantajosos para desenvolvedores, administradores de sistemas, e equipes de DevOps. Aqui estão alguns dos principais benefícios:
+### Isolamento e Consistência do Ambiente
+
+- Isolamento Completo: O MySQL em um contêiner Docker roda isolado do sistema operacional host, garantindo que suas dependências e configurações não interfiram com outras aplicações no mesmo ambiente.
+- Consistência de Ambiente: Um contêiner Docker garante que o MySQL seja executado no mesmo ambiente em qualquer máquina, independentemente do sistema operacional ou das configurações locais. Isso elimina problemas de "funciona na minha máquina".
+
+### Facilidade de Configuração e Manutenção.
+- Configuração Simplificada: Com Docker, você pode iniciar um banco de dados MySQL com uma única linha de comando. Não há necessidade de passar por complexos processos de instalação.
+- Atualizações e Reversões Simples: Você pode facilmente atualizar a versão do MySQL ou reverter para uma versão anterior, simplesmente alterando a imagem Docker utilizada.
+
+###  Portabilidade.
+- Desenvolvimento e Testes: Como os contêineres são portáteis, você pode desenvolver e testar a aplicação localmente com MySQL, e depois implantar o mesmo contêiner em um ambiente de produção, com a garantia de que ele funcionará da mesma maneira.
+- Movibilidade entre Ambientes: Um contêiner MySQL pode ser movido entre diferentes servidores ou ambientes (local, staging, produção) sem precisar de ajustes na configuração.
+
+### Segurança.
+- Isolamento de Processos: Contêineres Docker oferecem isolamento de processos, o que significa que o MySQL em contêiner não terá acesso direto ao sistema de arquivos do host, aumentando a segurança.
+- Fácil Aplicação de Políticas de Segurança: Usando Docker, você pode aplicar políticas de segurança como restrições de acesso a rede, limites de recursos, e políticas de backup com mais facilidade.
+
+### Redução de Custos e Eficiência.
+- Economia de Recursos: Ao usar contêineres, você pode executar várias instâncias de MySQL em diferentes contêineres na mesma máquina sem a sobrecarga de múltiplas máquinas virtuais.
+- Otimização de Infraestrutura: Permite melhor utilização dos recursos do servidor, executando múltiplos serviços ou bancos de dados na mesma infraestrutura.
+
+## Agora vamos instalar o Mysql em um comtainer Docker.
+### Puxe a Imagem do MySQL do Docker Hub
+A imagem do MySQL está disponível no Docker Hub. Para baixá-la, use o comando:
+```
+docker pull mysql:latest
+```
+Este comando baixa a última versão disponível do MySQL.
+
+### Execute o Contêiner MySQL
+Depois de baixar a imagem, você pode criar e executar um contêiner MySQL. Use o seguinte comando:
+
+```
+docker run --name meu-mysql -e MYSQL_ROOT_PASSWORD=minhasenha -p 3306:3306 -d mysql:latest
+```
+- `--name meu-mysql`: Define o nome do contêiner como "meu-mysql".
+- `-e MYSQL_ROOT_PASSWORD=minhasenha`: Define a senha para o usuário root do MySQL. Atenção guarde essa senha ela sera usada para conectar com seus projetos e acesar seus banco de dados ex: (`-e MYSQL_ROOT_PASSWORD=12345678`)
+- `-p`: Este sinalizador mapeia uma porta no host para uma porta no contêiner.
+3306:3306
+- `-d`: Executa o contêiner em segundo plano (modo "detached").
+- `mysql:latest`: Especifica a imagem MySQL que você baixou.
+
+###  Verifique se o Contêiner Está Rodando.
+Para verificar se o contêiner MySQL está em execução, use o comando:
+```
+docker ps
+```
+Esse comando lista todos os contêineres em execução. Você deve ver o contêiner "meu-mysql" na lista.
+
+### Acessando o MySQL no Contêiner.
+
+Você pode acessar o MySQL rodando no contêiner de duas maneiras:
+- Acessar a linha de comando do contêiner:
+```
+docker exec -it meu-mysql mysql -u root -p
+```
+- `exec -it`exec -it: Inicia uma sessão interativa no contêiner.
+- `mysql -u root -p`: Inicia o cliente MySQL como usuário root. Você precisará digitar a senha que configurou (no exemplo anterior, "minhasenha").
+
+- Conectar-se ao MySQL usando uma ferramenta externa:
+Se você deseja conectar-se ao MySQL a partir do seu sistema operacional host ou de outra aplicação, certifique-se de mapear a porta 3306 (a porta padrão do MySQL) do contêiner para o host.
+Agora, você pode usar ferramentas como MySQL Workbench ou mysql no terminal para se conectar ao MySQL no localhost na porta `3306`. essa porta e usada para se conectar com seus projetos ela foi definida no monento de criação do comtainer
+- `3306` (à esquerda): Refere-se à porta do sistema operacional host.
+- `3306` (à direita): Refere-se à porta dentro do contêiner.
+Neste caso, a porta 3306 do contêiner (que é a porta padrão do MySQL) está sendo mapeada para a porta 3306 do host. 
