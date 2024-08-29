@@ -382,7 +382,8 @@ docker run --name meu-mysql -e MYSQL_ROOT_PASSWORD=minhasenha -p 3306:3306 -d my
 - `-d`: Executa o contêiner em segundo plano (modo "detached").
 - `mysql:latest`: Especifica a imagem MySQL que você baixou.
 
-###  Verifique se o Contêiner Está Rodando.
+###  Verificando se o Contêiner Está Rodando.
+
 Para verificar se o contêiner MySQL está em execução, use o comando:
 ```
 docker ps
@@ -406,7 +407,8 @@ docker exec -it meu-mysql mysql -u root -p
 <img src="/img/criadb.png">
 <img src="/img/listardb.png">
 
-### Conectar-se ao MySQL usando uma ferramenta externa:
+## Conectar-se ao MySQL usando uma ferramenta externa:
+
 Se você deseja conectar-se ao MySQL a partir do seu sistema operacional host ou de outra aplicação, certifique-se de mapear a porta 3306 (a porta padrão do MySQL) do contêiner para o host.
 Agora, você pode usar ferramentas como MySQL Workbench ou mysql no terminal para se conectar ao MySQL no localhost na porta `3306`. essa porta e usada para se conectar com seus projetos ela foi definida no monento de criação do comtainer
 - `3306` (à esquerda): Refere-se à porta do sistema operacional host.
@@ -420,5 +422,11 @@ Ela se chama (Mysql Database Cliente).
 A extensão MySQL Database Client para VS Code é uma poderosa ferramenta para desenvolvedores que trabalham com bancos de dados MySQL, oferecendo um ambiente integrado para conectar-se a bancos de dados, executar consultas, gerenciar dados e estruturas, e tudo isso dentro do VS Code. Isso aumenta a produtividade, eliminando a necessidade de alternar entre diferentes ferramentas de desenvolvimento e gerenciamento de banco de dados. Essa extenção e completa não so para trabalhar com mysql mais para quase todos os bancos de dados relacionais e nao relacionais, vamos configurala passo a passo.
 
 <img src="/img/dbcliente.png">
+
+- Depois de instalada no Vscode. Aparecera dois icones na barra de tarefas do Vscode, O primeiro e para se conecta com bancos relacionais e o segundo e para bancos não relacionais. Vamos usar o primeiro, depois clique em (Creater Connection) na parte superior.
+
+<img src="/img/iconesinstencao.png">
+
+
 
 
