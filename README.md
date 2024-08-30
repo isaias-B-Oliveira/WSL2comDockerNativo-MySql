@@ -362,14 +362,14 @@ Usar o MySQL em um contêiner Docker oferece vários benefícios que podem ser p
 - Otimização de Infraestrutura: Permite melhor utilização dos recursos do servidor, executando múltiplos serviços ou bancos de dados na mesma infraestrutura.
 
 ## Agora vamos instalar o Mysql em um comtainer Docker.
-### Puxe a Imagem do MySQL do Docker Hub
+### 1️⃣ Puxe a Imagem do MySQL do Docker Hub
 A imagem do MySQL está disponível no Docker Hub. Para baixá-la, use o comando:
 ```
 docker pull mysql:latest
 ```
 Este comando baixa a última versão disponível do MySQL.
 
-### Execute o Contêiner MySQL
+### 2️⃣ Execute o Contêiner MySQL
 Depois de baixar a imagem, você pode criar e executar um contêiner MySQL. Use o seguinte comando:
 
 ```
@@ -382,15 +382,28 @@ docker run --name meu-mysql -e MYSQL_ROOT_PASSWORD=minhasenha -p 3306:3306 -d my
 - `-d`: Executa o contêiner em segundo plano (modo "detached").
 - `mysql:latest`: Especifica a imagem MySQL que você baixou.
 
-###  Verificando se o Contêiner Está Rodando.
+### 3️⃣ Verificando se o Contêiner Está Rodando.
 
 Para verificar se o contêiner MySQL está em execução, use o comando:
 ```
 docker ps
 ```
 Esse comando lista todos os contêineres em execução. Você deve ver o contêiner "meu-mysql" na lista.
+- Mais depois de executar o comando essa for a aparencia do terminal, isso significa que o container esta em off.
+<img src="/img/containeroff.png">
 
-### Acessando o MySQL no Contêiner.
+Para da start no container rode o seguinte comando.
+```
+docker start meu-mysql
+```
+- lembrando que meu-mysql foi nome que demos no momento da criação do container, mais vc poder rodar com o nome que vc deu ao seu container. no meu caso foi (sql_serve).
+- Veja a img abaixo.
+
+<img src="/img/containerup.png">
+
+- Entendendo a img. Preimeiro startei o docker com o comando `sudo service docker start`, depois digitei minha senha de super usuario do wsl2, depois startei o container com o comando `docker start sql_serve`, sql_serve eo nome do meu container, depois listei os containes ativos com comando `docker ps`, agora veja o status do container estar `up` isso significa que o container esta ativo e pronto prara o uso.
+
+## Acessando o MySQL no Contêiner.
 
 Você pode acessar o MySQL rodando no contêiner de duas maneiras:
 - Acessar a linha de comando do contêiner:
@@ -443,3 +456,9 @@ A extensão MySQL Database Client para VS Code é uma poderosa ferramenta para d
 3° - Seta Branca, esse e o campo (Username), e onde fica o seu nome de usuario, esse campo por padrão ja vem preenchido com `root` então vc não presiza alteralo.
 
 4° - Seta Azul, esse e o campo (Database), nele vc dve colocar o nome do banco onde quer se conectar no caso e o banco que criamos no nosso container `meu_banco`.
+
+5° - Seta Lilas. esse eo campo (Port), nele vc seta a porta que mapeou no momento da criação do container lembra `3306`.
+
+6° - Seta Amarela, esse eo campo (Password), nele vc deve colocar a sua senha root aquela que foi definida no momento da criação do container. ex ` MYSQL_ROOT_PASSWORD=minhasenha`.
+
+7° - Seta verde limão, depois que todos os campos estiverem devidamente preenchido clique no botão Connect, se tudo der certo vai estabelecer uma conexão com o banco de dados, lembrando que o container com mysql deve esta `up`, que e nada mais que o container ativo.
