@@ -427,6 +427,19 @@ A extensão MySQL Database Client para VS Code é uma poderosa ferramenta para d
 
 <img src="/img/iconesinstencao.png">
 
+- Depois de clicar em Create Connection vai aparecer a parte para conectar com o seu banco de dados.
 
+<img src="/img/semconection.png">
 
+- Agora vamos configurar os campos para a conexão com o banco de dados.
+- Cada campo esta marcado com uma seta de cada cor, vou explicar cada uma
 
+<img src="/img/comconection.png">  
+
+1° - Seta Vermelha, esse e o campo de (Serve Type) vc deve selecionar o tipo de servido do banco de dados veja que o primeiro eo mysql, mais veja que ela aceita conexão com todos os servidores do mercado. Vc pode trabalhar nos seus projetos com o que lhe agradar. ok serve escolhido vamos preencher os campos obrigatorios.
+
+2° - Seta Verde, esse e o campo (Host). Preencha o campo com `localhost`, pois nos vamos trabalhar localmente, mais vc pode trabalhar com serviço em nuven, Servidores VPS (Virtual Private Server) e etc.
+
+3° - Seta Branca, esse e o campo (Username), e onde fica o seu nome de usuario, esse campo por padrão ja vem preenchido com `root` então vc não presiza alteralo.
+
+4° - Seta Azul, esse e o campo (Database), nele vc dve colocar o nome do banco onde quer se conectar no caso e o banco que criamos no nosso container `meu_banco`.
