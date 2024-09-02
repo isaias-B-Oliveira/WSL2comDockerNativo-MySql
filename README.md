@@ -403,6 +403,12 @@ docker start meu-mysql
 
 - Entendendo a img. Preimeiro startei o docker com o comando `sudo service docker start`, depois digitei minha senha de super usuario do wsl2, depois startei o container com o comando `docker start sql_serve`, sql_serve eo nome do meu container, depois listei os containes ativos com comando `docker ps`, agora veja o status do container estar `up` isso significa que o container esta ativo e pronto prara o uso.
 
+### Para parar o container rode o seguinte comando
+```
+docker stop meu-mysql
+```
+- esse comando para o container em execução, lembrando que se o container tiver parado não sera posivel conectar com seu banco de dados.
+
 ## Acessando o MySQL no Contêiner.
 
 Você pode acessar o MySQL rodando no contêiner de duas maneiras:
