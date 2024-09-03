@@ -321,7 +321,18 @@ Atenção o comando `sudo service docker start` exigirá a senha do usuário que
 ```
 sudo service docker start
 ```
-Este comando acima terá que ser executado toda vez que o Linux for reiniciado. Se caso o serviço do Docker não estiver executando, mostrará esta mensagem de erro ao rodar comando `docker`:
+Este comando acima terá que ser executado toda vez que o Linux for reiniciado. Se caso o serviço do Docker não estiver executando, mostrará esta mensagem de erro ao rodar comando `docker ps`:
+
+- Depois do comando `docker ps` se o serviço não iniciar roder o comando
+
+ ```
+docker --version
+```
+esse comando lista a versão do docker instalado, caso não liste a versão significa que não foi instalado. para instalar rode o seguinte comando:
+ ```
+sudo apt install docker.io
+```
+- reinicio o Ubuntu, e rode novamente o comando `docker --version`
 
 ## ⚠️ Erro ao iniciar o Docker no Ubuntu 22.04
 
@@ -330,6 +341,8 @@ Este comando acima terá que ser executado toda vez que o Linux for reiniciado. 
 > - `Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?`
 >
 > Rode o comando `sudo update-alternatives --config iptables` e escolha a opção 1 `iptables-legacy`
+>
+> Reinicio o Ubuntu.
 >
 > Rode novamente o `sudo service docker start`. Rode algum comando Docker como `docker ps` para verificar se está funcionando corretamente. Se não mostrar o erro acima, está ok.
 
