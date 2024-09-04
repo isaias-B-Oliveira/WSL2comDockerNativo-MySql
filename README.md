@@ -328,11 +328,25 @@ Este comando acima terá que ser executado toda vez que o Linux for reiniciado. 
  ```
 docker --version
 ```
-esse comando lista a versão do docker instalado, caso não liste a versão significa que não foi instalado. para instalar rode o seguinte comando:
+<img src="/img/img1.jpeg">
+
+esse comando lista a versão do docker instalado, caso não liste a versão significa que não foi instalado. ele mostrarar ums exenplos de comandos que vc poder executar para instalar rode o seguinte comando referente a versão do linux que esta usando no caso eo Ubuntu:
+
  ```
 sudo apt install docker.io
 ```
 - reinicio o Ubuntu, e rode novamente o comando `docker --version`
+
+ <img src="/img/img2.jpeg">
+Agora sim tem uma versão instalada
+
+- Agora reinicie o terminal do Ubuntu
+- Depois start o docker `sudo service docker start`
+- Depois rode o comando `docker ps`
+- Se tudo der serto o terminal tera a aparencia da img abaixo.
+ <img src="/img/img3.jpeg">
+
+### ⚠️ Mais em alguns casos pode apresentar erro Veja abaixo ums dos mais comuns, e como resolver.
 
 ## ⚠️ Erro ao iniciar o Docker no Ubuntu 22.04
 
@@ -416,7 +430,7 @@ docker start meu-mysql
 
 - Entendendo a img. Preimeiro startei o docker com o comando `sudo service docker start`, depois digitei minha senha de super usuario do wsl2, depois startei o container com o comando `docker start sql_serve`, sql_serve eo nome do meu container, depois listei os containes ativos com comando `docker ps`, agora veja o status do container estar `up` isso significa que o container esta ativo e pronto prara o uso.
 
-### Para parar o container rode o seguinte comando
+### Para parar o container rode o seguinte comando. esse comando encerra o container. use quando não for mais trabalhar com esse container. Lembrando vc pode restartalo quando quiser.
 ```
 docker stop meu-mysql
 ```
@@ -481,3 +495,15 @@ A extensão MySQL Database Client para VS Code é uma poderosa ferramenta para d
 6° - Seta Amarela, esse eo campo (Password), nele vc deve colocar a sua senha root aquela que foi definida no momento da criação do container. ex ` MYSQL_ROOT_PASSWORD=minhasenha`.
 
 7° - Seta verde limão, depois que todos os campos estiverem devidamente preenchido clique no botão Connect, se tudo der certo vai estabelecer uma conexão com o banco de dados, lembrando que o container com mysql deve esta `up`, que e nada mais que o container ativo.
+
+### Depois de estabelecer a conexão com seu container MySQL usando a extensão "Database Client" no VS Code, você pode realizar diversas operações diretamente a partir do editor. Aqui estão algumas das coisas que você pode fazer:
+
+- Navegação: Você pode navegar pelas bases de dados, tabelas, views, procedures, e outros objetos disponíveis no seu servidor MySQL.
+- Visualizar Esquemas: Ver a estrutura das tabelas, incluindo colunas, tipos de dados, índices, etc
+
+### Executar Consultas SQL
+- Escrever Consultas: Abra uma nova aba de consulta SQL, onde você pode escrever e executar comandos SQL, como SELECT, INSERT, UPDATE, DELETE, etc.
+- Executar Scripts SQL: Carregue e execute scripts SQL completos diretamente no banco de dados.
+- Visualizar Resultados: Os resultados das consultas são exibidos em um painel separado, facilitando a análise de dados.
+
+Essa estenção e completa lhe darar total gerenciamento do seu banco de dados.
