@@ -143,6 +143,7 @@ A performance do WSL 2 está em se executar tudo dentro do Linux, por isso evite
 
 <img src="/img/projects.png">
 
+
 ⚠️ Atenção: O ideal e que vc saiba pelo menos os comandos basicos do linux assin facilitara a criação, manipulação, remoção, e movimentação de diretorio.
 
 A ideia é você pegar todos os seus projetos que estão no C: e copia-los para o Linux, no `/home/seu_usuario`. Assim, tudo estará dentro do Linux e a performance será melhor.
