@@ -230,6 +230,8 @@ Imagens são imutáveis, ou seja, uma vez criadas, não podem ser alteradas. Iss
 ## Como o Docker Funciona:
 O Docker utiliza uma tecnologia de contêinerização que envolve:
 
+
+
 - Isolamento de Processos: Cada contêiner roda em um processo separado e não interfere nos outros contêineres ou no sistema principal.
 - Portabilidade: Como tudo que a aplicação precisa está dentro do contêiner, você pode rodá-la em qualquer ambiente que suporte Docker, como no seu computador, no servidor de produção ou na nuvem.
 - Eficiência: Como os contêineres compartilham o kernel do sistema operacional, eles são mais leves e rápidos em comparação com máquinas virtuais, que têm um sistema operacional completo dentro delas.
@@ -337,6 +339,7 @@ esse comando lista a versão do docker instalado, caso não liste a versão sign
 sudo apt install docker.io
 ```
 - reinicio o Ubuntu, e rode novamente o comando `docker --version`
+  
 
  <img src="/img/img2.jpeg">
 Agora sim tem uma versão instalada
