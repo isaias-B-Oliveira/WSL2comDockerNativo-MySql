@@ -9,6 +9,7 @@ O **WSL2** (Windows Subsystem for Linux 2) é a segunda versão do subsistema da
 
 ### Características do WSL2:
 
+
 - **Kernel Linux Real**: Diferente da primeira versão (WSL1), que traduzia chamadas do sistema Linux para o Windows, o WSL2 roda um kernel Linux completo em uma máquina leve.
 - **Desempenho**: O WSL2 oferece melhor performance, especialmente em operações de I/O, como leitura e escrita de arquivos.
 - **Suporte a Docker**: Ele permite a execução do Docker nativamente no Windows, eliminando a necessidade de uma máquina virtual dedicada para rodar contêineres.
