@@ -4,6 +4,7 @@ O objetivo deste repositório é orientar desenvolvedores na instalação e conf
 
 ## ❓ O que e o WSL2 ?
 
+
 O **WSL2** (Windows Subsystem for Linux 2) é a segunda versão do subsistema da Microsoft que permite rodar um kernel Linux completo diretamente no Windows. Ele foi criado para melhorar a integração entre o Windows e Linux, permitindo que desenvolvedores usem ferramentas e utilitários nativos do Linux sem a necessidade de rodar uma máquina virtual completa.
 
 ### Características do WSL2:
