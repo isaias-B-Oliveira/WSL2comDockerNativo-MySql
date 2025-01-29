@@ -181,6 +181,7 @@ Não, o WSL 2 é suportado em todas as versões do Windows 10/11, desde que este
 
 ### Posso continuar desenvolvendo no Windows sem usar o WSL 2?
 
+
 Sim, você pode continuar desenvolvendo no Windows sem usar o WSL 2, mas o WSL 2 traz uma experiência de desenvolvimento mais próxima do Linux, com melhor desempenho e mais recursos.
 
 A não ser que você tenha uma necessidade específica de desenvolver no Windows, como desenvolver aplicações usando .Net, por exemplo, provavelmente sua aplicação rodará no Linux, então, o WSL 2 é a melhor opção quando se quer continuar a usar o Windows, usando Linux, mas sem dual boot ou máquina virtual.
