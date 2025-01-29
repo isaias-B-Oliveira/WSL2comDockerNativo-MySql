@@ -16,7 +16,6 @@ O **WSL2** (Windows Subsystem for Linux 2) é a segunda versão do subsistema da
 - **Ideal para desenvolvedores**: Que precisam de um ambiente Linux sem sair do Windows.
 
 
-
 ## ✅ Benefícios de Usar WSL2 com Docker Nativo
 
 ### 1. Desempenho Melhorado
